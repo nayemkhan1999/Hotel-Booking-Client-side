@@ -9,6 +9,8 @@ import Login from "./Components/Login/Login.jsx";
 import Rooms from "./Components/Rooms/Rooms.jsx";
 import AuthProvider from "./Components/AuthProvider/AuthProvider.jsx";
 import Register from "./Components/Register/Register.jsx";
+import AboutUs from "./Components/AboutUs/AboutUs.jsx";
+import ContactUs from "./Components/ContactUs/ContactUs.jsx";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +34,14 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+      {
+        path: "/about",
+        element: <AboutUs />,
+      },
+      {
+        path: "/contact",
+        element: <ContactUs />,
       },
     ],
   },

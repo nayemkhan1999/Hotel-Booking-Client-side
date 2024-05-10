@@ -1,7 +1,15 @@
+import Banner from "../Banner/Banner";
+import FeaturedRooms from "../FeaturedRooms/FeaturedRooms";
+import MapSection from "../MapSection/MapSection";
+import Newsletter from "../Newsletter/Newsletter";
+
 const Home = () => {
   return (
     <div>
-      <h1>This is Home page</h1>
+      <Banner></Banner>
+      <MapSection></MapSection>
+      <Newsletter></Newsletter>
+      <FeaturedRooms></FeaturedRooms>
     </div>
   );
 };

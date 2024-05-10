@@ -23,11 +23,17 @@ const NavBar = () => {
       <li>
         <NavLink to="/bookings">My Bookings</NavLink>
       </li>
+      <li>
+        <NavLink to="/about">About Us</NavLink>
+      </li>
+      <li>
+        <NavLink to="/contact">Contact Us</NavLink>
+      </li>
     </>
   );
 
   return (
-    <div className="averia-serif">
+    <div className="averia-serif mx-10">
       <div className="navbar bg-base-100  shadow-md rounded-b-lg px-5 ">
         <div className="navbar-start ">
           <div className="dropdown">
