@@ -5,7 +5,7 @@ import Newsletter from "../Newsletter/Newsletter";
 
 const Home = () => {
   return (
-    <div>
+    <div className="averia-serif">
       <Banner></Banner>
       <MapSection></MapSection>
       <Newsletter></Newsletter>

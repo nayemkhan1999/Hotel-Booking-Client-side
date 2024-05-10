@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
+import BG from "../../assets/videoBg.mp4";
 
 const Login = () => {
   const { loginUser, googleLogin } = useContext(AuthContext);
@@ -32,6 +33,9 @@ const Login = () => {
 
   return (
     <div className="hero ">
+      <div className="mx-10">
+        <video className="mx-auto rounded-t-md " src={BG} autoPlay loop muted />
+      </div>
       <div className="hero-content ">
         <div className="card shrink-0 w-96  text-white bg-gray-900 shadow-xl z-10 opacity-70 ">
           <img

@@ -1,4 +1,4 @@
-import blog from "../../assets/videoBg.mp4";
+import blog from "../../assets/BN.mp4";
 const Banner = () => {
   return (
     <div className="mx-10">
