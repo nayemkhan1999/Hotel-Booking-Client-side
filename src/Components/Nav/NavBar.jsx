@@ -1,7 +1,20 @@
 import { NavLink } from "react-router-dom";
 import logo from "../../assets/hotel.png";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import { useContext, useState } from "react";
 
 const NavBar = () => {
+  const { user, logOutUser } = useContext(AuthContext);
+  const [showEmail, setShowEmail] = useState(false);
+  const { displayName, photoURL, email } = user || {};
+
+  const handleLogOut = () => {
+    logOutUser().then((result) => {
+      console.log(result, "log out successfully").catch((error) => {
+        console.log(error);
+      });
+    });
+  };
   const link = (
     <>
       <li>
@@ -15,8 +28,8 @@ const NavBar = () => {
 
   return (
     <div className="averia-serif">
-      <div className="navbar bg-gray-100">
-        <div className="navbar-start">
+      <div className="navbar bg-base-100  shadow-md rounded-b-lg px-5 ">
+        <div className="navbar-start ">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
               <svg
@@ -36,26 +49,68 @@ const NavBar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-sm dropdown-content mt-3 z-[10]  p-2 shadow bg-base-100 rounded-box w-52"
             >
               {link}
             </ul>
           </div>
-          <h1 className="font-bold lg:text-4xl text-xl  text-gray-400 ml-10">
-            <span className="lg:text-5xl text-4xl text-orange-500">H</span>otel
-            Booking
-          </h1>
+          <p className="font-bold lg:text-4xl text-xl  text-gray-400">
+            <span className="lg:text-5xl text-4xl text-[teal]">H</span>
+            otel
+          </p>
+          <img
+            className="w-10 h-10"
+            src="https://cdn-icons-png.flaticon.com/128/3310/3310553.png"
+            alt=""
+            referrerPolicy="no-referrer"
+          />
         </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{link}</ul>
+        <div className="navbar-center hidden  lg:flex">
+          <ul className="menu menu-horizontal  px-1">{link}</ul>
         </div>
         <div className="navbar-end">
-          <NavLink
-            to="/login"
-            className="px-6 py-3 rounded-md lg:block md:block hidden text-orange-500 bg-gray-200 font-bold mr-10"
-          >
-            Login
-          </NavLink>
+          {user ? (
+            <>
+              <div>
+                <div
+                  onMouseLeave={() => setShowEmail(false)}
+                  onMouseEnter={() => setShowEmail(true)}
+                  className="avatar relative"
+                >
+                  <div className="lg:w-9 md:w-9 rounded-full ring-2  ring-teal-600 mr-5 ">
+                    <img
+                      className="lg:block md:block hidden"
+                      src={
+                        user?.photoURL ||
+                        "https://cdn-icons-png.flaticon.com/128/15735/15735369.png"
+                      }
+                    />
+                  </div>
+                </div>
+                <div className={`${showEmail ? "flex" : "hidden"}`}>
+                  <div className="bg-gray-400 opacity-80 lg:w-[250px] rounded-md text-white absolute z-10 right-[230px] top-[70px]">
+                    <div className="p-4 font-semibold">
+                      <h1>{displayName || "Not found"}</h1>
+                      <h1>{email || "Not Found"}</h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button
+                onClick={handleLogOut}
+                className="px-6 py-3 rounded-md  text-[teal] bg-gray-200 font-bold"
+              >
+                LogOUT
+              </button>
+            </>
+          ) : (
+            <NavLink
+              to="/login"
+              className="px-6 py-3 rounded-md  text-[teal] bg-gray-200 font-bold"
+            >
+              LOGIN
+            </NavLink>
+          )}
         </div>
       </div>
     </div>

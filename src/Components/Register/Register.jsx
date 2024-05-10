@@ -112,7 +112,7 @@ const Register = () => {
                   {...register("password", { required: true })}
                 />
                 <span
-                  className="absolute top-[465px] right-[75px] text-black text-lg"
+                  className="absolute top-[430px] right-[50px] text-black text-lg"
                   onClick={() => setShowPassword(!showPassword)}
                 >
                   {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
@@ -126,7 +126,7 @@ const Register = () => {
               </div>
               {error && <small className="text-red-600">{error}</small>}
               <div className="form-control mt-6">
-                <button className="btn btn-error text-white font-bold text-xl">
+                <button className="btn bg-[teal] border-none text-white font-bold text-xl">
                   Register
                 </button>
               </div>

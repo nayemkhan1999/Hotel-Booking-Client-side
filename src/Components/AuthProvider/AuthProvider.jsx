@@ -8,7 +8,7 @@ import {
 } from "firebase/auth";
 import auth from "../../FireBase.config";
 import { createContext, useEffect, useState } from "react";
-import { GoogleAuthProvider } from "firebase/auth/cordova";
+import { GoogleAuthProvider } from "firebase/auth";
 
 export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {

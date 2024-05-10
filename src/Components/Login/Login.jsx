@@ -4,7 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import logo from "../../assets/hotel.png";
 
 const Login = () => {
   const { loginUser, googleLogin } = useContext(AuthContext);
@@ -35,8 +34,12 @@ const Login = () => {
     <div className="hero ">
       <div className="hero-content ">
         <div className="card shrink-0 w-96  text-white bg-gray-900 shadow-xl z-10 opacity-70 ">
-          <img className="w-16 h-16 mx-auto" src={logo} alt="" />
-          <h1 className="text-5xl font-bold mx-auto mt-2">Hotel</h1>
+          <img
+            className="w-20 h-20 mx-auto"
+            src="https://cdn-icons-png.flaticon.com/128/3168/3168643.png"
+            alt=""
+          />
+
           <form onSubmit={handleSubmit(onSubmit)} className="card-body">
             <div className="form-control">
               <label className="label">
@@ -106,7 +109,7 @@ const Login = () => {
 
             <div className="text-center">
               <Link to="/register">
-                <span> New to House? </span>
+                <span> New to Hotel? </span>
                 <span className="text-success  font-bold underline ">
                   Sign up now
                 </span>
