@@ -1,7 +1,26 @@
+import { useLoaderData } from "react-router-dom";
+import RoomsCard from "../RoomsCard/RoomsCard";
+
 const Rooms = () => {
+  const rooms = useLoaderData();
   return (
-    <div>
-      <h3 className="text-4xl text-center">This is Rooms</h3>
+    <div className="mx-10 averia-serif">
+      <select className="border-2  font-semibold p-4 ">
+        <option className="font-semibold text-gray-400" value="">
+          Filter By Price
+        </option>
+        <option className="font-semibold text-gray-400" value="">
+          Descending Order
+        </option>
+        <option className="font-semibold text-gray-400" value="">
+          Ascending Order
+        </option>
+      </select>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {rooms.map((RC) => (
+          <RoomsCard key={RC._is} RC={RC}></RoomsCard>
+        ))}
+      </div>
     </div>
   );
 };
