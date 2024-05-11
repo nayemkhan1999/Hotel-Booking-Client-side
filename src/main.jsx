@@ -11,6 +11,7 @@ import AuthProvider from "./Components/AuthProvider/AuthProvider.jsx";
 import Register from "./Components/Register/Register.jsx";
 import AboutUs from "./Components/AboutUs/AboutUs.jsx";
 import ContactUs from "./Components/ContactUs/ContactUs.jsx";
+import RoomDetailsPage from "./Components/RoomDetailsPage/RoomDetailsPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,12 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <ContactUs />,
+      },
+      {
+        path: "/roomsDetailsPage/:id",
+        element: <RoomDetailsPage />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/rooms/${params.id}`),
       },
     ],
   },
