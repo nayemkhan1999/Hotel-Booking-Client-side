@@ -16,7 +16,7 @@ const ContactUs = () => {
         <h1 className="text-7xl text-center font-bold text-gray-300 pt-12">
           Contact Us
         </h1>
-        <div className="flex items-center ">
+        <div className="flex items-center justify-between gap-5">
           <div>
             <p className="text-[#AF8C3E] tracking-widest ml-5 mb-2 text-sm">
               Let’s talk
@@ -59,18 +59,18 @@ const ContactUs = () => {
               Send Massage
             </button>
           </div>
-          <div className="border-2 border-red-400">
-            <Map
-              height={200}
-              defaultCenter={[21.429109322139126, 91.97005959974331]}
-              defaultZoom={11}
-            >
-              <Marker
-                width={50}
-                anchor={[21.429109322139126, 91.97005959974331]}
-              />
-            </Map>
-          </div>
+
+          <Map
+            height={400}
+            width={500}
+            defaultCenter={[21.429109322139126, 91.97005959974331]}
+            defaultZoom={11}
+          >
+            <Marker
+              width={50}
+              anchor={[21.429109322139126, 91.97005959974331]}
+            />
+          </Map>
         </div>
       </div>
     </div>

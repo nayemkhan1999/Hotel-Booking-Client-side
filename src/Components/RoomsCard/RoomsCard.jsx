@@ -1,26 +1,35 @@
 import { NavLink } from "react-router-dom";
 
 const RoomsCard = ({ RC }) => {
-  const { _id, name, price_per_night, room_images, availability } = RC;
+  const { _id, name, price_per_night, room_images, availability, description } =
+    RC || {};
   return (
     <div className="mx-10 mt-10 averia-serif">
       <NavLink to={`/roomsDetailsPage/${_id}`}>
-        <div className="max-w-xs h-[85vh] p-6 rounded-md shadow-md dark:bg-gray-50 dark:text-gray-900">
+        <div className="max-w-xs relative h-[75vh] rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">
           <img
             src={room_images}
             alt=""
-            className="object-cover object-center w-full rounded-md h-72 dark:bg-gray-500"
+            className="object-cover  object-center w-full rounded-t-md h-60 dark:bg-gray-500"
           />
-          <div className="mt-6 mb-2 flex justify-between">
-            <p>Price:</p>
-            <span className="block text-xs  float-end font-medium tracking-widest uppercase dark:text-violet-600">
+          <div className="bg-[teal]  w-16 h-7 absolute top-[10px] left-[240px]  ">
+            <h1 className="text-[#f7c456] text-center font-bold  tracking-wide">
               ${price_per_night}
-            </span>
+            </h1>
           </div>
-          <h2 className="text-xl font-semibold tracking-wide mb-5">{name}</h2>
-          <p className="float-end  text-sm font-semibold text-[#d6a947]">
-            {availability}
-          </p>
+          <div className="flex flex-col justify-between p-6 space-y-8">
+            <div className="space-y-2">
+              <h2 className="text-xl font-semibold tracking-wide text-[#eebb4d]">
+                {availability}
+              </h2>
+              <h2 className="text-2xl font-semibold tracking-wide text-gray-400">
+                {name}
+              </h2>
+              <p className="dark:text-gray-800 opacity-75 text-sm ">
+                {description}
+              </p>
+            </div>
+          </div>
         </div>
       </NavLink>
     </div>

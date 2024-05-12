@@ -50,7 +50,7 @@ const router = createBrowserRouter([
         path: "/roomsDetailsPage/:id",
         element: <RoomDetailsPage />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/rooms/${params.id}`),
+          fetch(`http://localhost:5000/roomsDetails/${params.id}`),
       },
     ],
   },
