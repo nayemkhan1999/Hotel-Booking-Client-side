@@ -1,16 +1,20 @@
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { Navigate, useLocation } from "react-router-dom";
-// import imgLoading from "../../assets/loading.gif";
+import imgLoading from "../../assets/loading.gif";
 
 const PrivetRout = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
   const location = useLocation();
 
   if (loading) {
-    // <img src={imgLoading} alt="" />;
     return (
-      <span className="loading loading-bars loading-lg ml-72 mx-auto"></span>
+      <img
+        className="w-auto h-auto text-center mx-auto"
+        src={imgLoading}
+        alt=""
+      />
+      // <span className="loading loading-bars loading-lg ml-72 mx-auto"></span>
     );
   }
   if (user) {

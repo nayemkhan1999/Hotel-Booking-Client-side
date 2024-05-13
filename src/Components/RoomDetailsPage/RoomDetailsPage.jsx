@@ -17,6 +17,7 @@ const RoomDetailsPage = () => {
     special_offers,
     booking_dates,
     name,
+    _id,
   } = views;
 
   const handlePost = (e) => {
@@ -28,8 +29,18 @@ const RoomDetailsPage = () => {
     const size = room_size;
     const BDetails = booking_dates;
     const roomName = name;
+    const id = _id;
     const UserEmail = user?.email;
-    const bookNow = { date, image, UserEmail, roomName, price, size, BDetails };
+    const bookNow = {
+      date,
+      image,
+      id,
+      UserEmail,
+      roomName,
+      price,
+      size,
+      BDetails,
+    };
     console.log(bookNow);
 
     // send data to server site
