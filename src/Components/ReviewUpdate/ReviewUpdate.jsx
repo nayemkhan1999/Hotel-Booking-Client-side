@@ -5,11 +5,10 @@ import "react-datepicker/dist/react-datepicker.css";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
 
-const ReviewUpdate = ({ hotel }) => {
+const ReviewUpdate = ({ hotel, userEmail, setUserEmail }) => {
   const [startDate, setStartDate] = useState(new Date());
-  const [userEmail, setUserEmail] = useState([]);
   const { image, date, price, size, roomName, _id, BDetails, id } = hotel;
-  //   console.log(_id, id, "12 number line");
+  // console.log(id, "12 number line");
   const handleCancel = (_id) => {
     Swal.fire({
       title: "Are you sure?",

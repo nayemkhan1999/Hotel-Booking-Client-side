@@ -4,6 +4,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import toast from "react-hot-toast";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import axios from "axios";
 const RoomDetailsPage = () => {
   const [startDate, setStartDate] = useState(new Date());
   const { user } = useContext(AuthContext);
@@ -18,7 +19,8 @@ const RoomDetailsPage = () => {
     booking_dates,
     name,
     _id,
-  } = views;
+    reviews,
+  } = views || {};
 
   const handlePost = (e) => {
     e.preventDefault();
@@ -58,7 +60,17 @@ const RoomDetailsPage = () => {
           toast.success("Book Now Complete Successfully");
         }
       });
+
+    // ========================Handle ablale======================
+    axios
+      .patch(`http://localhost:5000/availableRooms/${_id}`, {
+        availability: "Unavailable",
+      })
+      .then((result) => {
+        console.log(result.data);
+      });
   };
+
   return (
     <div className="mx-10 averia-serif">
       <div className="hero  bg-base-200">
@@ -85,6 +97,9 @@ const RoomDetailsPage = () => {
             <h2 className="text-xl font-semibold tracking-wide text-gray-800 mt-2">
               <span className="text-gray-400 ">OFFER% </span> {special_offers}
             </h2>
+            <h2 className="text-xl font-semibold tracking-wide text-gray-800 mt-2">
+              <span className="text-gray-400 ">User Review: </span> {reviews}
+            </h2>
             <p className="py-6 opacity-80">{description}</p>
             {/* Open the modal using document.getElementById('ID').showModal() method */}
             <button
@@ -105,6 +120,7 @@ const RoomDetailsPage = () => {
                     ${price_per_night}
                   </h1>
                 </div>
+
                 <h2 className="text-xl font-semibold tracking-wide text-[#eebb4d] mb-4">
                   {availability}
                 </h2>

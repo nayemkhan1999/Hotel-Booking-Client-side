@@ -9,11 +9,7 @@ const PrivetRout = ({ children }) => {
 
   if (loading) {
     return (
-      <img
-        className="w-auto h-auto text-center mx-auto"
-        src={imgLoading}
-        alt=""
-      />
+      <img className="mx-auto w-[100vh]" src={imgLoading} alt="" />
       // <span className="loading loading-bars loading-lg ml-72 mx-auto"></span>
     );
   }

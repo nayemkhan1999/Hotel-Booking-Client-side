@@ -41,7 +41,12 @@ const MyBookingPage = () => {
           <tbody>
             {/* row 1 */}
             {userEmail.map((hotel) => (
-              <ReviewUpdate key={hotel._id} hotel={hotel}></ReviewUpdate>
+              <ReviewUpdate
+                key={hotel._id}
+                hotel={hotel}
+                userEmail={userEmail}
+                setUserEmail={setUserEmail}
+              ></ReviewUpdate>
             ))}
           </tbody>
         </table>

@@ -1,6 +1,29 @@
+import { useContext } from "react";
 import taxi from "../../assets/taxi-app.gif";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 const Newsletter = () => {
+  const { user } = useContext(AuthContext);
+
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    Swal.fire({
+      title:
+        "Welcome to our website! You will be notified of upcoming offers via email.",
+      width: 600,
+      padding: "3em",
+      color: "#716add",
+      background: "#fff url(/images/trees.png)",
+      backdrop: `
+      rgba(82, 154, 150, 0.38)
+        url("/images/nyan-cat.gif")
+        left top
+        no-repeat
+      `,
+    });
+  };
   return (
     <div className="averia-serif mt-10 mx-10 ">
       <h1 className="lg:text-4xl text-3xl text-gray-400 font-bold text-center">
@@ -33,7 +56,8 @@ const Newsletter = () => {
                     id="name"
                     type="text"
                     placeholder="Your name"
-                    className="w-full rounded-md focus:ring focus:dark:ring-[teal] dark:border-gray-300"
+                    defaultValue={user?.displayName}
+                    className="w-full rounded-md py-2 px-2 focus:ring focus:dark:ring-[teal] dark:border-gray-300"
                   />
                 </div>
                 <div>
@@ -44,7 +68,7 @@ const Newsletter = () => {
                     id="phone"
                     type="text"
                     placeholder="Phone Number"
-                    className="w-full rounded-md focus:ring focus:dark:ring-[teal] dark:border-gray-300"
+                    className="w-full rounded-md py-2 px-2  focus:ring focus:dark:ring-[teal] dark:border-gray-300"
                   />
                 </div>
                 <div>
@@ -55,10 +79,12 @@ const Newsletter = () => {
                     id="lastname"
                     type="text"
                     placeholder="Email address"
-                    className="w-full rounded-md focus:ring focus:dark:ring-[teal] dark:border-gray-300"
+                    defaultValue={user?.email}
+                    className="w-full rounded-md py-2 px-2  focus:ring focus:dark:ring-[teal] dark:border-gray-300"
                   />
                 </div>
                 <button
+                  onClick={handleSubscribe}
                   type="button"
                   className="w-full py-2 font-semibold rounded bg-[teal] dark:text-gray-50"
                 >
