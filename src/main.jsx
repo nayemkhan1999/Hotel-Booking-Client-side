@@ -12,6 +12,9 @@ import Register from "./Components/Register/Register.jsx";
 import AboutUs from "./Components/AboutUs/AboutUs.jsx";
 import ContactUs from "./Components/ContactUs/ContactUs.jsx";
 import RoomDetailsPage from "./Components/RoomDetailsPage/RoomDetailsPage.jsx";
+import MyBookingPage from "./Components/MyBookingPage/MyBookingPage.jsx";
+import { Toaster } from "react-hot-toast";
+import PrivetRout from "./Components/PrivetRout/PrivetRout.jsx";
 
 const router = createBrowserRouter([
   {
@@ -27,7 +30,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/rooms",
-        element: <Rooms />,
+        element: (
+          <PrivetRout>
+            <Rooms />
+          </PrivetRout>
+        ),
         loader: () => fetch("http://localhost:5000/rooms"),
       },
       {
@@ -47,6 +54,14 @@ const router = createBrowserRouter([
         element: <ContactUs />,
       },
       {
+        path: "/bookings",
+        element: (
+          <PrivetRout>
+            <MyBookingPage />
+          </PrivetRout>
+        ),
+      },
+      {
         path: "/roomsDetailsPage/:id",
         element: <RoomDetailsPage />,
         loader: ({ params }) =>
@@ -60,6 +75,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProvider>
       <RouterProvider router={router} />
+      <Toaster />
     </AuthProvider>
   </React.StrictMode>
 );

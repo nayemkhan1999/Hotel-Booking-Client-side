@@ -13,16 +13,16 @@ const AboutUs = () => {
           height: "100vh",
         }}
       >
-        <h1 className="text-7xl text-center font-bold text-gray-300 pt-20">
+        <h1 className="lg:text-7xl text-3xl text-center font-bold text-gray-300 pt-20">
           About Us
         </h1>
         <p className="text-gray-200 tracking-widest ml-5 mb-2 text-sm">
           ALL OFFERS
         </p>
-        <p className="text-gray-200 tracking-widest ml-5 text-4xl">
+        <p className="text-gray-200 tracking-widest ml-5 lg:text-4xl text-2xl">
           Relax on Vacation
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+        <div className="md:grid  md:grid-cols-2 lg:grid-cols-4 hidden ">
           {/* 01 */}
           <div className=" mt-8 ml-4">
             <span className="text-7xl  text-gray-400 ">1</span>

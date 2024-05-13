@@ -18,19 +18,54 @@ const NavBar = () => {
   const link = (
     <>
       <li>
-        <NavLink to="/">Home</NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "text-[#ffae4c]" : "text-[#363f4d] "
+          }
+          to="/"
+        >
+          Home
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/rooms">Rooms</NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "text-[#ffae4c] " : "text-[#363f4d]"
+          }
+          to="/rooms"
+        >
+          Rooms
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/bookings">My Bookings</NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "text-[#ffae4c]" : "text-[#363f4d] "
+          }
+          to="/bookings"
+        >
+          My Bookings
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/about">About Us</NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "text-[#ffae4c]" : "text-[#363f4d] "
+          }
+          to="/about"
+        >
+          About Us
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/contact">Contact Us</NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "text-[#ffae4c]" : "text-[#363f4d]"
+          }
+          to="/contact"
+        >
+          Contact Us
+        </NavLink>
       </li>
     </>
   );
@@ -68,7 +103,7 @@ const NavBar = () => {
             otel
           </p>
           <img
-            className="w-10 h-10"
+            className="w-10 h-10 lg:flex hidden"
             src="https://cdn-icons-png.flaticon.com/128/3310/3310553.png"
             alt=""
             referrerPolicy="no-referrer"
@@ -109,7 +144,7 @@ const NavBar = () => {
               </div>
               <button
                 onClick={handleLogOut}
-                className="px-6 py-3 rounded-md  text-[teal] bg-gray-200 font-bold"
+                className="lg:px-6 px-2 lg:py-3 py-2 rounded-md  text-[teal] bg-gray-200 font-bold"
               >
                 LogOUT
               </button>
@@ -117,7 +152,7 @@ const NavBar = () => {
           ) : (
             <NavLink
               to="/login"
-              className="px-6 py-3 rounded-md  text-[teal] bg-gray-200 font-bold"
+              className="lg:px-6 px-2 lg:py-3 py-2 rounded-md  text-[teal] bg-gray-200 font-bold"
             >
               LOGIN
             </NavLink>

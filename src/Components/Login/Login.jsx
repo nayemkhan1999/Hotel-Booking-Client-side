@@ -36,8 +36,8 @@ const Login = () => {
       <div className="mx-10">
         <video className="mx-auto rounded-t-md " src={BG} autoPlay loop muted />
       </div>
-      <div className="hero-content ">
-        <div className="card shrink-0 w-96  text-white bg-gray-900 shadow-xl z-10 opacity-70 ">
+      <div className="hero-content  ">
+        <div className="card shrink-0 w-96  text-white bg-gray-950 shadow-xl z-10 opacity-70 ">
           <img
             className="w-20 h-20 mx-auto"
             src="https://cdn-icons-png.flaticon.com/128/3168/3168643.png"

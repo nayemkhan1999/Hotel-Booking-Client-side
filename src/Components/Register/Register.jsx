@@ -4,6 +4,7 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import BG from "../../assets/videoBg.mp4";
 
 const Register = () => {
   const { createUser, UserUpdateProfile } = useContext(AuthContext);
@@ -49,6 +50,15 @@ const Register = () => {
   return (
     <div>
       <div className="hero ">
+        <div className="mx-10">
+          <video
+            className="mx-auto rounded-t-md "
+            src={BG}
+            autoPlay
+            loop
+            muted
+          />
+        </div>
         <div className="hero-content ">
           <div className="card shrink-0 w-96  text-white  bg-gray-900 shadow-xl opacity-70  ">
             <h1 className="text-5xl font-bold mx-auto mt-2">Register</h1>

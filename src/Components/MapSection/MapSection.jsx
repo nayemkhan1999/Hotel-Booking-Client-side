@@ -5,7 +5,7 @@ const MapSection = () => {
       <h1 className="text-4xl text-gray-400 font-bold text-center mt-10">
         Hotel <span className="text-[teal]">Location</span>
       </h1>
-      <div className="divider w-96 mx-auto"></div>
+      <div className="divider w-96 mx-auto lg:flex hidden"></div>
       <div className="mx-10 mt-10 ">
         <Map
           height={600}
