@@ -51,7 +51,7 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unSubsCribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      // get access token
+      //==================jwt access token start=====================
       const logged = currentUser?.email || user?.email;
       setUser(currentUser);
       if (currentUser) {
@@ -77,6 +77,7 @@ const AuthProvider = ({ children }) => {
             console.log(res.data);
           });
       }
+      //==================jwt access token End=====================
       setLoading(false);
     });
     return () => {

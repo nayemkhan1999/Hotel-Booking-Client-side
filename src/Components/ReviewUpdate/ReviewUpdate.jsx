@@ -8,7 +8,7 @@ import Swal from "sweetalert2";
 const ReviewUpdate = ({ hotel, userEmail, setUserEmail }) => {
   const [startDate, setStartDate] = useState(new Date());
   const { image, date, price, size, roomName, _id, BDetails, id } = hotel;
-  // console.log(id, "12 number line");
+  console.log(hotel, "12 number line hotel");
   const handleCancel = (_id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -90,11 +90,11 @@ const ReviewUpdate = ({ hotel, userEmail, setUserEmail }) => {
           {/* Open the modal using document.getElementById('ID').showModal() method */}
           <button
             className="btn btn-xs bg-[#AF8C3E] rounded-none text-white"
-            onClick={() => document.getElementById("my_modal_1").showModal()}
+            onClick={() => document.getElementById(_id).showModal()}
           >
             Review
           </button>
-          <dialog id="my_modal_1" className="modal">
+          <dialog id={_id} className="modal">
             <div className="modal-box w-96">
               <h3 className="font-bold text-lg">User Review!</h3>
 
