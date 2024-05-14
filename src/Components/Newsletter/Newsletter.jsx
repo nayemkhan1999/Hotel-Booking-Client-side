@@ -67,6 +67,7 @@ const Newsletter = () => {
                     id="phone"
                     type="text"
                     placeholder="Phone Number"
+                    required
                     className="w-full rounded-md py-2 px-2  focus:ring focus:dark:ring-[teal] dark:border-gray-300"
                   />
                 </div>
