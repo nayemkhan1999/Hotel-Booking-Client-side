@@ -11,3 +11,12 @@
   font-weight: 300;
   font-style: normal;
 }
+
+.style {
+  cursor: pointer;
+  transition: 0.5s;
+}
+.style:hover {
+  transform: scale(1.03);
+  box-shadow: 5px 5px 8px 5px #555;
+}

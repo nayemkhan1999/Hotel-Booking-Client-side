@@ -96,7 +96,7 @@ const Newsletter = () => {
             <div className="grid grid-cols-1">
               <div className="lg:w-[100vh] lg:ml-28">
                 <h1 className="lg:text-4xl text-3xl text-gray-400 font-bold mb-2">
-                  Special Offer
+                  Exclusive Offer
                 </h1>
                 <img src={taxi} alt="" />
               </div>

@@ -3,6 +3,7 @@ import Banner from "../Banner/Banner";
 import FeaturedRooms from "../FeaturedRooms/FeaturedRooms";
 import MapSection from "../MapSection/MapSection";
 import Newsletter from "../Newsletter/Newsletter";
+import SpecialOffer from "./SpecialOffer";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Banner></Banner>
       <MapSection></MapSection>
       <Newsletter></Newsletter>
+      <SpecialOffer></SpecialOffer>
       <FeaturedRooms></FeaturedRooms>
     </div>
   );
