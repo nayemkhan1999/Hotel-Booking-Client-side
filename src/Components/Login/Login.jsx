@@ -5,6 +5,8 @@ import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import BG from "../../assets/videoBg.mp4";
+import { Helmet } from "react-helmet-async";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const { loginUser, googleLogin } = useContext(AuthContext);
@@ -20,6 +22,10 @@ const Login = () => {
   const onSubmit = (data) => {
     loginUser(data.email, data.password).then((result) => {
       console.log(result);
+      if (result.user) {
+        navigate(location?.state || "/");
+        toast.success("Login Successful");
+      }
     });
   };
   // social Provider navigate
@@ -33,6 +39,9 @@ const Login = () => {
 
   return (
     <div className="hero ">
+      <Helmet>
+        <title>Hotel | Login Page</title>
+      </Helmet>
       <div className="mx-10">
         <video className="mx-auto rounded-t-md " src={BG} autoPlay loop muted />
       </div>

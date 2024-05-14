@@ -5,12 +5,12 @@ const Error = () => {
   return (
     <div className="text-center mx-auto">
       <img
-        className="w-[1240px] h-[500px] mx-auto text-center"
+        className="w-screen h-[560px] mx-auto text-center"
         src={error}
         alt=""
       />
       <Link to="/">
-        <button className="bg-[#ddd] btn w-full text-gray-500 font-black text-lg">
+        <button className="bg-[#e7e3e3] btn w-full text-[#AF8C3E] font-black text-lg">
           <span className="font-bold text-2xl">
             <HiChevronDoubleLeft />
           </span>{" "}

@@ -1,8 +1,12 @@
 import { IoCheckmark } from "react-icons/io5";
 import one from "../../assets/one.jpg";
+import { Helmet } from "react-helmet-async";
 const AboutUs = () => {
   return (
     <div className="mx-10 averia-serif ">
+      <Helmet>
+        <title>About Us</title>
+      </Helmet>
       <div
         className="rounded-t-md"
         style={{

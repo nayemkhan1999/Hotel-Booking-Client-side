@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import BG from "../../assets/videoBg.mp4";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const { createUser, UserUpdateProfile } = useContext(AuthContext);
@@ -49,6 +50,9 @@ const Register = () => {
   };
   return (
     <div>
+      <Helmet>
+        <title>Hotel | Register Page</title>
+      </Helmet>
       <div className="hero ">
         <div className="mx-10">
           <video

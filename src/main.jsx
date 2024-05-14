@@ -15,6 +15,7 @@ import RoomDetailsPage from "./Components/RoomDetailsPage/RoomDetailsPage.jsx";
 import MyBookingPage from "./Components/MyBookingPage/MyBookingPage.jsx";
 import { Toaster } from "react-hot-toast";
 import PrivetRout from "./Components/PrivetRout/PrivetRout.jsx";
+import { HelmetProvider } from "react-helmet-async";
 
 const router = createBrowserRouter([
   {
@@ -74,7 +75,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProvider>
-      <RouterProvider router={router} />
+      <HelmetProvider>
+        <RouterProvider router={router} />
+      </HelmetProvider>
       <Toaster />
     </AuthProvider>
   </React.StrictMode>

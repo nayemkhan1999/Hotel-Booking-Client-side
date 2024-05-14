@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import ReviewUpdate from "../ReviewUpdate/ReviewUpdate";
+import { Helmet } from "react-helmet-async";
 
 const MyBookingPage = () => {
   const { user } = useContext(AuthContext);
@@ -18,6 +19,9 @@ const MyBookingPage = () => {
 
   return (
     <div className="averia-serif mx-10">
+      <Helmet>
+        <title>My Bookings</title>
+      </Helmet>
       <h1 className="text-4xl text-center">
         This is Booking Data:{userEmail.length}
       </h1>

@@ -9,6 +9,7 @@ import {
 import auth from "../../FireBase.config";
 import { createContext, useEffect, useState } from "react";
 import { GoogleAuthProvider } from "firebase/auth";
+import axios from "axios";
 
 export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
@@ -50,12 +51,38 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unSubsCribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      // get access token
+      const logged = currentUser?.email || user?.email;
+      setUser(currentUser);
+      if (currentUser) {
+        axios
+          .post(
+            `http://localhost:5000/jwt`,
+            { logged },
+            { withCredentials: true }
+          )
+          .then((res) => {
+            console.log(res.data);
+          });
+      } else {
+        axios
+          .post(
+            `http://localhost:5000/logout`,
+            { logged },
+            {
+              withCredentials: true,
+            }
+          )
+          .then((res) => {
+            console.log(res.data);
+          });
+      }
       setLoading(false);
     });
     return () => {
       unSubsCribe();
     };
-  }, [reload]);
+  }, [user?.email]);
   const allValue = {
     createUser,
     user,

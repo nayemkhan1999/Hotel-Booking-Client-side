@@ -1,10 +1,14 @@
 import { useLoaderData } from "react-router-dom";
 import RoomsCard from "../RoomsCard/RoomsCard";
+import { Helmet } from "react-helmet-async";
 
 const Rooms = () => {
   const rooms = useLoaderData();
   return (
     <div className="mx-10 averia-serif">
+      <Helmet>
+        <title>Hotel | Rooms</title>
+      </Helmet>
       <select className="border-2  font-semibold p-4 ">
         <option className="font-semibold text-gray-400" value="">
           Filter By Price

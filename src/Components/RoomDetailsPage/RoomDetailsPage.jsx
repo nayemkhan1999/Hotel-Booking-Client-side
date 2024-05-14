@@ -5,6 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import toast from "react-hot-toast";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 const RoomDetailsPage = () => {
   const [startDate, setStartDate] = useState(new Date());
   const { user } = useContext(AuthContext);
@@ -73,6 +74,9 @@ const RoomDetailsPage = () => {
 
   return (
     <div className="mx-10 averia-serif">
+      <Helmet>
+        <title>Rooms Details</title>
+      </Helmet>
       <div className="hero  bg-base-200">
         <div className="hero-content flex-col lg:flex-row relative">
           <img

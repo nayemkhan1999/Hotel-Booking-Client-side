@@ -1,8 +1,12 @@
 import { Marker, Map } from "pigeon-maps";
 import page from "../../assets/page.jpg";
+import { Helmet } from "react-helmet-async";
 const ContactUs = () => {
   return (
     <div className="mx-10 averia-serif ">
+      <Helmet>
+        <title>Contact Us</title>
+      </Helmet>
       <div
         className="rounded-t-md"
         style={{

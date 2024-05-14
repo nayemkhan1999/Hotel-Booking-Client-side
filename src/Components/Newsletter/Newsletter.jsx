@@ -2,7 +2,6 @@ import { useContext } from "react";
 import taxi from "../../assets/taxi-app.gif";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
 
 const Newsletter = () => {
   const { user } = useContext(AuthContext);
@@ -14,7 +13,7 @@ const Newsletter = () => {
         "Welcome to our website! You will be notified of upcoming offers via email.",
       width: 600,
       padding: "3em",
-      color: "#716add",
+      color: "#42505f",
       background: "#fff url(/images/trees.png)",
       backdrop: `
       rgba(82, 154, 150, 0.38)
