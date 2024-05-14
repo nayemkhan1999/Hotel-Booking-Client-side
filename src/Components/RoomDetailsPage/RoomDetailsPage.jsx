@@ -62,7 +62,7 @@ const RoomDetailsPage = () => {
         }
       });
 
-    // ========================Handle ablale======================
+    // ========================Handle aveable======================
     axios
       .patch(`http://localhost:5000/availableRooms/${_id}`, {
         availability: "Unavailable",
@@ -73,7 +73,7 @@ const RoomDetailsPage = () => {
   };
 
   return (
-    <div className="mx-10 averia-serif">
+    <div className="mx-10  averia-serif">
       <Helmet>
         <title>Rooms Details</title>
       </Helmet>

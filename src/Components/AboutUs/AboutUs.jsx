@@ -3,7 +3,7 @@ import one from "../../assets/one.jpg";
 import { Helmet } from "react-helmet-async";
 const AboutUs = () => {
   return (
-    <div className="mx-10 averia-serif ">
+    <div className="lg:mx-10 mx-2 averia-serif ">
       <Helmet>
         <title>About Us</title>
       </Helmet>
@@ -26,7 +26,7 @@ const AboutUs = () => {
         <p className="text-gray-200 tracking-widest ml-5 lg:text-4xl text-2xl">
           Relax on Vacation
         </p>
-        <div className="md:grid  md:grid-cols-2 lg:grid-cols-4 hidden ">
+        <div className="md:grid  md:grid-cols-4 lg:grid-cols-4 hidden ">
           {/* 01 */}
           <div className=" mt-8 ml-4">
             <span className="text-7xl  text-gray-400 ">1</span>

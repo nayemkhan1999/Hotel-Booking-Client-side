@@ -33,6 +33,7 @@ const Login = () => {
     socialProvider().then((result) => {
       if (result.user) {
         navigate(location?.state || "/");
+        toast.success("Login Successful");
       }
     });
   };

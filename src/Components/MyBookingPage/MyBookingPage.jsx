@@ -22,7 +22,7 @@ const MyBookingPage = () => {
       <Helmet>
         <title>My Bookings</title>
       </Helmet>
-      <h1 className="text-4xl text-center">
+      <h1 className="lg:text-4xl text-3xl text-gray-400 font-bold text-center">
         This is Booking Data:{userEmail.length}
       </h1>
       <div className="overflow-x-auto">

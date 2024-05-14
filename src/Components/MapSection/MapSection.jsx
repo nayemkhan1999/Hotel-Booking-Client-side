@@ -6,7 +6,7 @@ const MapSection = () => {
         Hotel <span className="text-[teal]">Location</span>
       </h1>
       <div className="divider w-96 mx-auto lg:flex hidden"></div>
-      <div className="mx-10 mt-10 ">
+      <div className="lg:mx-10 mx-2 mt-10 ">
         <Map
           height={600}
           defaultCenter={[21.429109322139126, 91.97005959974331]}

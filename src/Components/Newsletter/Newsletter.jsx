@@ -24,7 +24,7 @@ const Newsletter = () => {
     });
   };
   return (
-    <div className="averia-serif mt-10 mx-10 ">
+    <div className="averia-serif mt-10 lg:mx-10 mx-2">
       <h1 className="lg:text-4xl text-3xl text-gray-400 font-bold text-center">
         <span className="text-[teal]">Exclusive</span> Offers
       </h1>
@@ -32,7 +32,7 @@ const Newsletter = () => {
       <div>
         <section className="p-6 dark:bg-gray-100 dark:text-gray-800 rounded-md">
           <div className="container grid  mx-auto text-center lg:grid-cols-2 justify-between xl:grid-cols-5">
-            <div className="lg:w-[90vh] w-44 px-6 py-16 rounded-md sm:px-12 md:px-16 xl:col-span-2 dark:bg-gray-50">
+            <div className="lg:w-[90vh] w-64 px-6 py-16 rounded-md sm:px-12 md:px-16 xl:col-span-2 dark:bg-gray-50">
               <span className="block mb-2 text-[#eebb4d]">
                 Exclusive Hotel Booking
               </span>

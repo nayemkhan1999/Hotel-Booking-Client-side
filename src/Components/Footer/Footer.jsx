@@ -2,7 +2,7 @@ import { FaPinterestSquare } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="averia-serif mx-10">
+    <div className="averia-serif lg:mx-10">
       <footer className="footer footer-center p-10 bg-black text-primary-content  ">
         <aside>
           <div className="flex items-center">

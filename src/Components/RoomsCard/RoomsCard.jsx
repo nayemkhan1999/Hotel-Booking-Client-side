@@ -4,7 +4,7 @@ const RoomsCard = ({ RC }) => {
   const { _id, name, price_per_night, room_images, availability, description } =
     RC || {};
   return (
-    <div className="mx-10 mt-10 averia-serif">
+    <div className="lg:mx-10 mx-2 mt-10 averia-serif">
       <NavLink to={`/roomsDetailsPage/${_id}`}>
         <div className="max-w-xs relative lg:h-[75vh] rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">
           <img

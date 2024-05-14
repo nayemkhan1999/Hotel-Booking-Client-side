@@ -1,7 +1,7 @@
 const FRoomCard = ({ HB }) => {
   const { room_name, image_url, description } = HB;
   return (
-    <div className="averia-serif mx-10">
+    <div className="averia-serif lg:mx-10 mx-2">
       <div className="max-w-xs rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">
         <img
           src={image_url}

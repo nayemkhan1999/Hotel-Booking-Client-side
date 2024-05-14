@@ -3,7 +3,7 @@ import page from "../../assets/page.jpg";
 import { Helmet } from "react-helmet-async";
 const ContactUs = () => {
   return (
-    <div className="mx-10 averia-serif ">
+    <div className="lg:mx-10 mx-2 averia-serif ">
       <Helmet>
         <title>Contact Us</title>
       </Helmet>
@@ -17,7 +17,7 @@ const ContactUs = () => {
           height: "100vh",
         }}
       >
-        <h1 className="text-7xl text-center font-bold text-gray-300 pt-10">
+        <h1 className="lg:text-7xl text-4xl text-center font-bold text-gray-300 pt-10">
           Contact Us
         </h1>
         <div className="flex items-center justify-around gap-5">
@@ -25,7 +25,7 @@ const ContactUs = () => {
             <p className="text-[#AF8C3E] tracking-widest ml-5 mb-2 text-sm">
               Let’s talk
             </p>
-            <p className="text-gray-200  ml-5 text-3xl">
+            <p className="text-gray-200  ml-5 lg:text-3xl">
               Send Us, We’d love to hear from you.
             </p>
             <div className="ml-5 mt-4">
@@ -49,22 +49,22 @@ const ContactUs = () => {
                 placeholder="Subject"
               />
             </div>
-            <div className="ml-5 mt-4">
+            <div className="ml-5 mt-4 lg:flex hidden">
               <textarea
                 className="bg-gray-200 p-2 text-[#AF8C3E]"
                 id="message"
                 name="message"
-                rows="4"
-                cols="35"
+                rows="4 "
+                cols="35 "
                 placeholder="massage"
               ></textarea>
             </div>
-            <button className="btn px-5 mt-2 bg-[#AF8C3E] text-gray-200 border-none rounded-none ml-5">
+            <button className=" btn px-5 mt-2 bg-[#AF8C3E] text-gray-200 border-none rounded-none ml-5">
               Send Massage
             </button>
           </div>
 
-          <div className="mt-10">
+          <div className="mt-10 lg:flex hidden">
             <Map
               height={400}
               width={670}

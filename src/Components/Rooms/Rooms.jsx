@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet-async";
 const Rooms = () => {
   const rooms = useLoaderData();
   return (
-    <div className="mx-10 averia-serif">
+    <div className="lg:mx-10 mx-2 averia-serif">
       <Helmet>
         <title>Hotel | Rooms</title>
       </Helmet>
