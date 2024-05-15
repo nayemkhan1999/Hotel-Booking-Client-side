@@ -8,7 +8,7 @@ import Swal from "sweetalert2";
 const ReviewUpdate = ({ hotel, userEmail, setUserEmail }) => {
   const [startDate, setStartDate] = useState(new Date());
   const { image, date, price, size, roomName, _id, BDetails, id } = hotel;
-  console.log(hotel, "12 number line hotel");
+  // console.log(hotel, "12 number line hotel");
 
   const handleUpdate = (e) => {
     e.preventDefault();
@@ -25,20 +25,23 @@ const ReviewUpdate = ({ hotel, userEmail, setUserEmail }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/booking/${_id}`, {
+        fetch(`https://hotel-booking-blond-tau.vercel.app/booking/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
+            // console.log(data);
             if (data.deletedCount > 0) {
               //=======================UnAvailable Rooms update==================
               axios
-                .patch(`http://localhost:5000/unAvailableRooms/${id2}`, {
-                  availability: "Available",
-                })
+                .patch(
+                  `https://hotel-booking-blond-tau.vercel.app/unAvailableRooms/${id2}`,
+                  {
+                    availability: "Available",
+                  }
+                )
                 .then((result) => {
-                  console.log(result.data);
+                  // console.log(result.data);
                 });
               Swal.fire({
                 title: "Deleted!",
@@ -58,14 +61,14 @@ const ReviewUpdate = ({ hotel, userEmail, setUserEmail }) => {
   const handleReviews = (e) => {
     e.preventDefault();
     const userReview = e.target.review.value;
-    console.log(userReview);
+    // console.log(userReview);
 
     axios
-      .patch(`http://localhost:5000/reviewUpdate/${id}`, {
+      .patch(`https://hotel-booking-blond-tau.vercel.app/reviewUpdate/${id}`, {
         reviews: userReview,
       })
       .then((result) => {
-        console.log(result.data);
+        // console.log(result.data);
         toast.success("Your Review has been submit");
       });
   };

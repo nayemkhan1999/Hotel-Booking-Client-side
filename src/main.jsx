@@ -27,7 +27,8 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("http://localhost:5000/featuresRoom"),
+        loader: () =>
+          fetch("https://hotel-booking-blond-tau.vercel.app/featuresRoom"),
       },
       {
         path: "/rooms",
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
             <Rooms />
           </PrivetRout>
         ),
-        loader: () => fetch("http://localhost:5000/rooms"),
+        loader: () => fetch("https://hotel-booking-blond-tau.vercel.app/rooms"),
       },
       {
         path: "/login",
@@ -66,7 +67,9 @@ const router = createBrowserRouter([
         path: "/roomsDetailsPage/:id",
         element: <RoomDetailsPage />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/roomsDetails/${params.id}`),
+          fetch(
+            `https://hotel-booking-blond-tau.vercel.app/roomsDetails/${params.id}`
+          ),
       },
     ],
   },

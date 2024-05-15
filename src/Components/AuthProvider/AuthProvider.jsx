@@ -16,7 +16,7 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [reload, setReload] = useState(false);
-  console.log(user, "14 number line");
+  // console.log(user, "14 number line");
   //SocialProvider
   const googleProvider = new GoogleAuthProvider();
   // createUser
@@ -57,24 +57,24 @@ const AuthProvider = ({ children }) => {
       if (currentUser) {
         axios
           .post(
-            `http://localhost:5000/jwt`,
+            `https://hotel-booking-blond-tau.vercel.app/jwt`,
             { logged },
             { withCredentials: true }
           )
           .then((res) => {
-            console.log(res.data);
+            // console.log(res.data);
           });
       } else {
         axios
           .post(
-            `http://localhost:5000/logout`,
+            `https://hotel-booking-blond-tau.vercel.app/logout`,
             { logged },
             {
               withCredentials: true,
             }
           )
           .then((res) => {
-            console.log(res.data);
+            // console.log(res.data);
           });
       }
       //==================jwt access token End=====================

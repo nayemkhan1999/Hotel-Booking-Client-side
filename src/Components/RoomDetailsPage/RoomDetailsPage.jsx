@@ -44,10 +44,10 @@ const RoomDetailsPage = () => {
       size,
       BDetails,
     };
-    console.log(bookNow);
+    // console.log(bookNow);
 
     // send data to server site
-    fetch("http://localhost:5000/bookNow", {
+    fetch("https://hotel-booking-blond-tau.vercel.app/bookNow", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -56,7 +56,7 @@ const RoomDetailsPage = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data.insertedId) {
           toast.success("Book Now Complete Successfully");
         }
@@ -64,11 +64,14 @@ const RoomDetailsPage = () => {
 
     // ======================= AvailableRooms Update ================================
     axios
-      .patch(`http://localhost:5000/availableRooms/${_id}`, {
-        availability: "Unavailable",
-      })
+      .patch(
+        `https://hotel-booking-blond-tau.vercel.app/availableRooms/${_id}`,
+        {
+          availability: "Unavailable",
+        }
+      )
       .then((result) => {
-        console.log(result.data);
+        // console.log(result.data);
       });
   };
 

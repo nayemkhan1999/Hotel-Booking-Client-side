@@ -25,12 +25,12 @@ const NavBar = () => {
       setTheme("light");
     }
   };
-  console.log(theme);
+  // console.log(theme);
   // ====================Dark Mode Creating End==========================
   const handleLogOut = () => {
     logOutUser().then((result) => {
       console.log(result, "log out successfully").catch((error) => {
-        console.log(error);
+        // console.log(error);
       });
     });
   };

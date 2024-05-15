@@ -4,7 +4,7 @@ import { Typewriter } from "react-simple-typewriter";
 
 const FeaturedRooms = () => {
   const room = useLoaderData();
-  console.log(room, "5number line");
+  // console.log(room, "5number line");
   return (
     <div className="">
       <h2 className="text-4xl text-gray-400 font-bold text-center mt-10">

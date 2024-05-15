@@ -8,9 +8,12 @@ const MyBookingPage = () => {
   const [userEmail, setUserEmail] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/booking_email/${user?.email}`, {
-      credentials: "include",
-    })
+    fetch(
+      `https://hotel-booking-blond-tau.vercel.app/booking_email/${user?.email}`,
+      {
+        credentials: "include",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
