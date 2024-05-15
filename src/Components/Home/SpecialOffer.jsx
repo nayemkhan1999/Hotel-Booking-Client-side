@@ -8,13 +8,25 @@ import one7 from "../../assets/one7.png";
 import one8 from "../../assets/one8.png";
 import one9 from "../../assets/onw9.jpg";
 import one10 from "../../assets/one10.jpg";
+import { Typewriter } from "react-simple-typewriter";
 const SpecialOffer = () => {
   return (
     <div>
       <div className="averia-serif mt-10 lg:mx-10 mx-2">
         <section className="py-8 px-5 bg-gray-50 dark:text-gray-900 rounded-md ">
           <h1 className="lg:text-7xl text-3xl text-gray-400 font-bold text-center">
-            <span className="text-[teal]">Special</span> Offers
+            <span className="text-7xl">Special</span>
+            <span className="text-[teal]">
+              <Typewriter
+                cursor
+                cursorBlinking
+                delaySpeed={1000}
+                deleteSpeed={25}
+                loop={0}
+                typeSpeed={75}
+                words={[" Offers"]}
+              />
+            </span>
           </h1>
           <div className="divider lg:w-96 mx-auto"></div>
           <div className="flex items-center justify-evenly">

@@ -2,6 +2,7 @@ import { useContext } from "react";
 import taxi from "../../assets/taxi-app.gif";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import { Typewriter } from "react-simple-typewriter";
 
 const Newsletter = () => {
   const { user } = useContext(AuthContext);
@@ -25,14 +26,29 @@ const Newsletter = () => {
   };
   return (
     <div className="averia-serif mt-10 lg:mx-10 mx-2">
-      <h1 className="lg:text-4xl text-3xl text-gray-400 font-bold text-center">
-        <span className="text-[teal]">Exclusive</span> Offers
+      <h1 className="lg:text-4xl text-4xl text-gray-400 font-bold text-center">
+        <span className="text-5xl">E</span>
+        <span className="text-[teal]">
+          <Typewriter
+            cursor
+            cursorBlinking
+            delaySpeed={1000}
+            deleteSpeed={25}
+            loop={0}
+            typeSpeed={75}
+            words={["xclusive Offers"]}
+          />
+        </span>
       </h1>
       <div className="divider w-96 mx-auto mb-10 lg:flex hidden"></div>
       <div>
         <section className="p-6 dark:bg-gray-100 dark:text-gray-800 rounded-md">
           <div className="container grid  mx-auto text-center lg:grid-cols-2 justify-between xl:grid-cols-5">
-            <div className="lg:w-[90vh] w-64 px-6 py-16 rounded-md sm:px-12 md:px-16 xl:col-span-2 dark:bg-gray-50">
+            <div
+              data-aos="fade-right"
+              data-aos-duration="2000"
+              className="lg:w-[90vh] w-64 px-6 py-16 rounded-md sm:px-12 md:px-16 xl:col-span-2 dark:bg-gray-50"
+            >
               <span className="block mb-2 text-[#eebb4d]">
                 Exclusive Hotel Booking
               </span>
@@ -52,6 +68,9 @@ const Newsletter = () => {
                     Your name
                   </label>
                   <input
+                    data-aos="fade-left"
+                    data-aos-delay="2000"
+                    data-aos-duration="1000"
                     id="name"
                     type="text"
                     placeholder="Your name"
@@ -64,6 +83,9 @@ const Newsletter = () => {
                     Phone Number
                   </label>
                   <input
+                    data-aos="fade-left"
+                    data-aos-delay="2100"
+                    data-aos-duration="1500"
                     id="phone"
                     type="text"
                     placeholder="Phone Number"
@@ -76,6 +98,9 @@ const Newsletter = () => {
                     Email address
                   </label>
                   <input
+                    data-aos="fade-left"
+                    data-aos-delay="2200"
+                    data-aos-duration="2000"
                     id="lastname"
                     type="text"
                     placeholder="Email address"
@@ -84,6 +109,9 @@ const Newsletter = () => {
                   />
                 </div>
                 <button
+                  data-aos="fade-left"
+                  data-aos-delay="2300"
+                  data-aos-duration="2500"
                   onClick={handleSubscribe}
                   type="button"
                   className="w-full py-2 font-semibold rounded bg-[teal] dark:text-gray-50"
@@ -93,10 +121,14 @@ const Newsletter = () => {
               </form>
             </div>
 
-            <div className="grid grid-cols-1">
+            <div
+              data-aos="fade-left"
+              data-aos-duration="2000"
+              className="grid grid-cols-1"
+            >
               <div className="lg:w-[100vh] lg:ml-28">
                 <h1 className="lg:text-4xl text-3xl text-gray-400 font-bold mb-2">
-                  Exclusive Offer
+                  BOOK NOW
                 </h1>
                 <img src={taxi} alt="" />
               </div>

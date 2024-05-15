@@ -9,7 +9,12 @@ const ReviewUpdate = ({ hotel, userEmail, setUserEmail }) => {
   const [startDate, setStartDate] = useState(new Date());
   const { image, date, price, size, roomName, _id, BDetails, id } = hotel;
   console.log(hotel, "12 number line hotel");
-  const handleCancel = (_id) => {
+
+  const handleUpdate = (e) => {
+    e.preventDefault();
+    toast.success("Update Successful");
+  };
+  const handleCancel = (_id, id2) => {
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -27,6 +32,14 @@ const ReviewUpdate = ({ hotel, userEmail, setUserEmail }) => {
           .then((data) => {
             console.log(data);
             if (data.deletedCount > 0) {
+              //=======================UnAvailable Rooms update==================
+              axios
+                .patch(`http://localhost:5000/unAvailableRooms/${id2}`, {
+                  availability: "Available",
+                })
+                .then((result) => {
+                  console.log(result.data);
+                });
               Swal.fire({
                 title: "Deleted!",
                 text: "Your Destination has been deleted.",
@@ -82,7 +95,10 @@ const ReviewUpdate = ({ hotel, userEmail, setUserEmail }) => {
         </td>
 
         <td>
-          <button className="btn btn-xs bg-[teal] rounded-none text-white">
+          <button
+            onClick={handleUpdate}
+            className="btn btn-xs bg-[teal] rounded-none text-white"
+          >
             Update
           </button>
         </td>
@@ -123,7 +139,7 @@ const ReviewUpdate = ({ hotel, userEmail, setUserEmail }) => {
         </td>
         <td>
           <button
-            onClick={() => handleCancel(_id)}
+            onClick={() => handleCancel(_id, id)}
             className="btn btn-xs bg-rose-600 rounded-none text-white"
           >
             Cancel

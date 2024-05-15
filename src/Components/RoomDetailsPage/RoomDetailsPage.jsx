@@ -62,7 +62,7 @@ const RoomDetailsPage = () => {
         }
       });
 
-    // ========================Handle aveable======================
+    // ======================= AvailableRooms Update ================================
     axios
       .patch(`http://localhost:5000/availableRooms/${_id}`, {
         availability: "Unavailable",

@@ -4,6 +4,9 @@ import FeaturedRooms from "../FeaturedRooms/FeaturedRooms";
 import MapSection from "../MapSection/MapSection";
 import Newsletter from "../Newsletter/Newsletter";
 import SpecialOffer from "./SpecialOffer";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 const Home = () => {
   return (
