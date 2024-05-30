@@ -99,7 +99,7 @@ const RoomDetailsPage = () => {
               {name}
             </h2>
             <h2 className="text-xl font-semibold tracking-wide text-gray-800 mt-2">
-              {room_size}
+              {room_size}sqft
             </h2>
             <h2 className="text-xl font-semibold tracking-wide text-gray-800 mt-2">
               <span className="text-gray-400 ">OFFER% </span> {special_offers}

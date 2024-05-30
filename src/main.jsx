@@ -16,6 +16,7 @@ import MyBookingPage from "./Components/MyBookingPage/MyBookingPage.jsx";
 import { Toaster } from "react-hot-toast";
 import PrivetRout from "./Components/PrivetRout/PrivetRout.jsx";
 import { HelmetProvider } from "react-helmet-async";
+import AddRoms from "./Components/AddRoms/AddRoms.jsx";
 
 const router = createBrowserRouter([
   {
@@ -60,6 +61,14 @@ const router = createBrowserRouter([
         element: (
           <PrivetRout>
             <MyBookingPage />
+          </PrivetRout>
+        ),
+      },
+      {
+        path: "/addRooms",
+        element: (
+          <PrivetRout>
+            <AddRoms />
           </PrivetRout>
         ),
       },

@@ -59,6 +59,16 @@ const NavBar = () => {
       <li>
         <NavLink
           className={({ isActive }) =>
+            isActive ? "text-[#ffae4c] " : "text-[#363f4d]"
+          }
+          to="/addRooms"
+        >
+          Add Rooms
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          className={({ isActive }) =>
             isActive ? "text-[#ffae4c]" : "text-[#363f4d] "
           }
           to="/bookings"
