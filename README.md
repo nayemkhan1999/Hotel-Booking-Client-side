@@ -1,6 +1,6 @@
 # Hotel_Booking
 
-live link url:
+live link url: https://hotel-booking-d7e89.web.app
 
 - Dear Valued Guest .......
 - We are thrilled to announce an exclusive offer just for you! Book your stay with us and enjoy a 25% discount on all room categories!
